@@ -15,6 +15,8 @@ import com.example.lab_week_06_77881.model.CatModel
 import com.example.lab_week_06_77881.model.Gender
 import com.example.lab_week_06_77881.model.CatBreed
 import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.ItemTouchHelper
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -22,8 +24,8 @@ class MainActivity : AppCompatActivity() {
         findViewById(R.id.recycler_view)
     }
     private val catAdapter by lazy {
-//Glide is used here to load the images
-//Here we are passing the onClickListener function to the Adapter
+    //Glide is used here to load the images
+    //Here we are passing the onClickListener function to the Adapter
         CatAdapter(layoutInflater, GlideImageLoader(this), object:
             CatAdapter.OnClickListener {
             //When this is triggered, the pop up dialog will be shown
@@ -33,14 +35,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//Setup the adapter for the recycler view
+        //Setup the adapter for the recycler view
         recyclerView.adapter = catAdapter
-//Setup the layout manager for the recycler view
-//A layout manager is used to set the structure of the item views
-//For this tutorial, we're using the vertical linear structure
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        val itemTouchHelper = ItemTouchHelper(catAdapter.swipeToDeleteCallback)
+        itemTouchHelper.attachToRecyclerView(recyclerView)
+        //Setup the layout manager for the recycler view
+        //A layout manager is used to set the structure of the item views
+        //For this tutorial, we're using the vertical linear structure
         recyclerView.layoutManager = LinearLayoutManager(this,
             LinearLayoutManager.VERTICAL, false)
-//Add data to the model list in the adapter
+        //Add data to the model list in the adapter
         catAdapter.setData(
             listOf(
                 CatModel(
