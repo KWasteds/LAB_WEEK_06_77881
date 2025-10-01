@@ -49,29 +49,19 @@ class MainActivity : AppCompatActivity() {
         //Add data to the model list in the adapter
         catAdapter.setData(
             listOf(
-                CatModel(
-                    Gender.Male,
-                    CatBreed.BalineseJavanese,
-                    "Fred",
-                    "Silent and deadly",
-                    "https://cdn2.thecatapi.com/images/7dj.jpg"
-                ),
-                CatModel(
-                    Gender.Female,
-                    CatBreed.ExoticShorthair,
-                    "Wilma",
-                    "Cuddly assassin",
-                    "https://cdn2.thecatapi.com/images/egv.jpg"
-                ),
-                CatModel(
-                    Gender.Unknown,
-                    CatBreed.AmericanCurl,
-                    "Curious George",
-                    "Award winning investigator",
-                    "https://cdn2.thecatapi.com/images/bar.jpg"
-                )
+                CatModel(Gender.Male, CatBreed.BalineseJavanese, "Fred", "Silent and deadly", "https://cdn2.thecatapi.com/images/7dj.jpg"),
+                CatModel(Gender.Female, CatBreed.ExoticShorthair, "Wilma", "Cuddly assassin", "https://cdn2.thecatapi.com/images/egv.jpg"),
+                CatModel(Gender.Unknown, CatBreed.AmericanCurl, "Curious George", "Award winning investigator", "https://cdn2.thecatapi.com/images/bar.jpg"),
+                CatModel(Gender.Male, CatBreed.AmericanCurl, "Tommy", "Sleeps all day", "https://cdn2.thecatapi.com/images/a6p.jpg"),
+                CatModel(Gender.Female, CatBreed.ExoticShorthair, "Luna", "Queen of chaos", "https://cdn2.thecatapi.com/images/bpc.jpg"),
+                CatModel(Gender.Male, CatBreed.BalineseJavanese, "Shadow", "Silent observer", "https://cdn2.thecatapi.com/images/b1c.jpg"),
+                CatModel(Gender.Female, CatBreed.ExoticShorthair, "Chloe", "Snack hunter", "https://cdn2.thecatapi.com/images/cdq.jpg"),
+                CatModel(Gender.Male, CatBreed.AmericanCurl, "Max", "The fluffy destroyer", "https://cdn2.thecatapi.com/images/d5s.jpg"),
+                CatModel(Gender.Unknown, CatBreed.BalineseJavanese, "Misty", "No one knows", "https://cdn2.thecatapi.com/images/e35.jpg"),
+                CatModel(Gender.Female, CatBreed.ExoticShorthair, "Bella", "Royal guardian", "https://cdn2.thecatapi.com/images/f9p.jpg")
             )
         )
+
     }
 
     private fun showSelectionDialog(cat: CatModel) {
